@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 
-openai.api_key = ""
+openai.api_key = st.secrets["api_secret"]
 
 """
 # Welcome to My Hospital Chatbot!
