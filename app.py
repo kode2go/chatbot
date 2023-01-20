@@ -9,5 +9,5 @@ response = openai.Completion.create(
 )
 
 answer = response["choices"][0]["text"]
-# st.write(answer)
+st.write(answer)
 print(answer)
