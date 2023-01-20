@@ -10,7 +10,7 @@ Feel free to ask any questions below:
 
 """
 
-chatbot_input = st.text_input('What is an angiogram?')
+chatbot_input = st.text_input('Ask a question?','What is an angiogram?')
 
 response = openai.Completion.create(
     engine="text-davinci-002",
