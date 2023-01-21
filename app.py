@@ -10,7 +10,7 @@ df = pd.DataFrame(columns=['Timestamp', 'Question', 'Response'])
 from deta import Deta
 # Connect to Deta Base with your Project Key
 deta = Deta(st.secrets["deta_key"])
-db = deta.Base("example-db")
+db = deta.Base("example-db2")
 # db.put({"name": "test123", "age": 50})
 
 """
@@ -34,7 +34,7 @@ if st.button('Submit'):
     answer = response["choices"][0]["text"]
     st.write(answer)
     print(answer)
-    db.put({"timestampStr": timestampStr, "chatbot_input": chatbot_input, "answer": answer})
+    db.put({"answer": answer, "timestampStr": timestampStr,"chatbot_input": chatbot_input})
 
 #     new_row = pd.Series([timestampStr, chatbot_input, answer], index=df.columns)
 #     df = df.append(new_row,ignore_index=True) 
