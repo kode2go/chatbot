@@ -1,2 +1,2 @@
 openai==0.26.1
-pygsheets==2.0.6
+gsheetsdb==0.1.13.1
