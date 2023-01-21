@@ -1,1 +1,2 @@
 openai==0.26.1
+pygsheets==2.0.6
