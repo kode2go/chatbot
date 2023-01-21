@@ -42,4 +42,6 @@ if st.button('Submit'):
 
 if st.button('Display'):
     db_content = db.fetch().items
-    st.write(db_content)
+    df = pd.DataFrame.from_dict(db_content)
+    st.write(df)
+    st.dataframe(df)
