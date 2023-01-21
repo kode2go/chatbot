@@ -7,7 +7,7 @@ openai.api_key = st.secrets["api_secret"]
 df = pd.DataFrame(columns=['Timestamp', 'Question', 'Response'])
 
 import pygsheets
-gc = pygsheets.authorize(service_account_env_var = "google_cred")
+gc = pygsheets.authorize(service_account_env_var = st.secrets["google_cred"])
 sh = gc.open('gsheet1')
 wks = sh[0]
 
