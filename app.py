@@ -40,8 +40,9 @@ if st.button('Submit'):
 #     df = df.append(new_row,ignore_index=True) 
 #     df.to_csv('submissions.csv', mode='a', index=False, header=False)
 
-if st.button('Display'):
+admin_input = st.text_input('Admin','Admin')
+
+if st.button('Display') and admin_input == "1234":
     db_content = db.fetch().items
     df = pd.DataFrame.from_dict(db_content)
-    st.write(df)
     st.dataframe(df)
