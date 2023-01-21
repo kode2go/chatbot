@@ -1,2 +1,2 @@
 openai==0.26.1
-gsheetsdb==0.1.13.1
+deta==1.1.0
