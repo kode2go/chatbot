@@ -8,6 +8,10 @@ df = pd.DataFrame(columns=['Timestamp', 'Question', 'Response'])
 
 
 from deta import Deta
+# Connect to Deta Base with your Project Key
+deta = Deta(st.secrets["deta_key"])
+db = deta.Base("example-db")
+db.put({"name": "test123", "age": 50})
 
 """
 # Welcome to My Hospital Chatbot!
