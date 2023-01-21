@@ -39,3 +39,7 @@ if st.button('Submit'):
 #     new_row = pd.Series([timestampStr, chatbot_input, answer], index=df.columns)
 #     df = df.append(new_row,ignore_index=True) 
 #     df.to_csv('submissions.csv', mode='a', index=False, header=False)
+
+if st.button('Display'):
+    db_content = db.fetch().items
+    st.write(db_content)
