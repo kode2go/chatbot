@@ -6,18 +6,8 @@ import pandas as pd
 openai.api_key = st.secrets["api_secret"]
 df = pd.DataFrame(columns=['Timestamp', 'Question', 'Response'])
 
-from gsheetsdb import connect
 
-# Create a connection object.
-conn = connect()
-sheet_url = st.secrets["public_gsheets_url"]
-
-def run_query(query):
-    rows = conn.execute(query, headers=1)
-    rows = rows.fetchall()
-    return rows
-
-rows = run_query(f'SELECT * FROM "{sheet_url}"')
+from deta import Deta
 
 """
 # Welcome to My Hospital Chatbot!
