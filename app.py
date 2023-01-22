@@ -42,7 +42,13 @@ if st.button('Submit'):
 
 admin_input = st.text_input('Admin','Admin')
 
+@st.experimental_memo
+def convert_df(df):
+   return df.to_csv(index=False).encode('utf-8')
+
 if st.button('Display') and admin_input == "1234":
     db_content = db.fetch().items
     df = pd.DataFrame.from_dict(db_content)
+    csv = convert_df(df)
     st.dataframe(df)
+    st.download_button("Press to Download",csv,"file.csv","text/csv",key='download-csv')
