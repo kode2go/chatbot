@@ -44,7 +44,7 @@ admin_input = st.text_input('Admin','Admin')
 
 @st.experimental_memo
 def convert_df(df):
-   return df.to_csv(index=False).encode('utf-8')
+   return df.to_csv(index=False)
 
 if st.button('Display') and admin_input == "1234":
     db_content = db.fetch().items
