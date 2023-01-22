@@ -21,6 +21,7 @@ Feel free to ask any questions below:
 """
 
 chatbot_input = st.text_input('Ask a question?','What is an angiogram?')
+chatbot_input = chatbot_input + '?'
 
 if st.button('Submit'):
     dateTimeObj = datetime.now()
