@@ -49,6 +49,8 @@ def convert_df(df):
 if st.button('Display') and admin_input == "1234":
     db_content = db.fetch().items
     df = pd.DataFrame.from_dict(db_content)
+    df['c_answer'].str.replace('?', '')
+    df['c_answer'].str.strip()
     csv = convert_df(df)
     st.dataframe(df)
     st.download_button("Press to Download",csv,"file.csv","text/csv",key='download-csv')
